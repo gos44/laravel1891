@@ -7,7 +7,7 @@
 </head>
 <body>
 
-    <form action="{{route('producto.update', $producto)}}"  method="POST">
+    <form action="{{route('user.edit')}}"  method="POST">
 
         @csrf
         @method('put')

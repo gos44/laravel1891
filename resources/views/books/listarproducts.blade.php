@@ -72,21 +72,27 @@
     <table>
         <tr>
             <th>ID</th>
-            <th>Nombre</th>
-            <th>Descripción</th>
-            <th>Acción</th>
+            <th>titulo</th>
+            <th>codigo</th>
+            <th>isbn</th>
+            <th>editorial</th>
+            <th>paguinas</th>
+            <th>Mostrar</th>
             <th>Editar</th>
             <th>Eliminar</th>
         </tr>
-        @foreach ($producto as $producto)
+        @foreach ($productos as $producto)
         <tr>
             <td>{{ $producto->id }}</td>
-            <td>{{ $producto->name }}</td>
-            <td>{{ $producto->price }}</td>
-            <td><a href="{{route('showproducts', $producto->id)}}"><button type="button">Mostrar</button></a></td>
-            <td><a href="{{route('product.edit', $producto->id)}}"><button type="button">editar</button></a></td>
+            <td>{{ $producto->title }}</td>
+            <td>{{ $producto->codigo }}</td>
+            <td>{{ $producto->isbn }}</td>
+            <td>{{ $producto->editorial }}</td>
+            <td>{{ $producto->paginas }}</td>
+            <td><a href="{{route('showlibro', $producto->id)}}"><button type="button">Mostrar</button></a></td>
+            <td><a href="{{route('libro.edit', $producto->id)}}"><button type="button">editar</button></a></td>
             <td>
-                <form action="{{route('destroy',$producto->id)}}" method="POST">
+                <form action="{{route('destroylibro', $producto->id)}}" method="POST">
                     @csrf
                     @method('delete')
                     <button type="submit">Eliminar</button>

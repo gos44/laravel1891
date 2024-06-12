@@ -8,40 +8,40 @@
         <title>Document</title>
     </head>
     <body>
-        <h1>FORMULARIO PRODUCTO</h1>
+        <h1>FORMULARIO Libros</h1>
     
-        <form action="{{route('product.store')}}"  method="POST" >
+        <form action="{{route('libro.store')}}"  method="POST" >
            
             @csrf
-    
+
             <label>
-                Ingrese el nombre del producto:
+                Ingrese el nombre del title:
                 <br>
-                <input type="text" name="name">
+                <input type="text" name="title">
             </label>
             <br><br>
             <label>
-                Ingrese el precio: :
+                Ingrese el codigo :
                 <br>
-                <input type="number" name="price">
+                <input type="text" name="codigo">
             </label>
             <br><br>
             <label>
-                Ingrese el descricion: :
+                Ingrese el isbn: :
                 <br>
-                <input type="text" name="description">
+                <input type="text" name="isbn">
             </label>
             <br><br>
             <label>
-                Ingrese el cantidad: :
+                Ingrese el editorial: :
                 <br>  <br>
-                <input type="number" name="cant">
+                <input type="text" name="editorial">
             </label>
             <br>  <br>
             <label>
-                Ingrese el fecha:
+                Ingrese el paginas:
                 <br>
-                <input type="date" name="date">
+                <input type="number" name="paginas">
             </label>
            
             <br><br><br>

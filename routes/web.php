@@ -1,12 +1,10 @@
 <?php
-use App\Http\Controllers\FriendsController;
-use App\Http\Controllers\CousinsController;
-use App\Http\Controllers\InvertedPhraseController;
-use App\Http\Controllers\CuadraticaController;
-use App\Http\Controllers\MarketController;
+
 use App\Http\Controllers\ProductsController;
-use App\Http\Controllers\LibraryController;
-use App\Http\Controllers\TallerController;
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ExemplaryController;
+use App\Http\Controllers\ExemplaryUserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CursoController;
 
@@ -21,55 +19,14 @@ use App\Http\Controllers\CursoController;
 |
 */
 
-Route::get('/Primos', function () {
-    return view('welcome');
-}); 
-
-Route::get('/listar/produc',[ProductsController::class,'listarproduc'])->name('listarproducts');
-Route::get('/producto/create',[ProductsController::class,'formularioProducto']);
-Route::post('/productostore',[ProductsController::class,'productoStore'])->name('product.store');
-Route::get('/{producto}',[ProductsController::class,'show'])->name('showproducts');
-Route::put('producto/{producto}',[ProductsController::class,'update'])->name('producto.update');
-Route::delete('/{producto}',[ProductsController::class,'destroy'])->name('destroy');
-Route::get('procuto/{producto}/editar',[ProductsController::class,'edit'])->name('product.edit');
-
-Route::get('/frmercado',[MarketController::class,'mercardo']);
-Route::post('/Mercado',[MarketController::class,'mercado2'])->name('product2.store');
-
-Route::get('/frlibreria',[LibraryController::class,'library']);
-Route::post('/libreria',[LibraryController::class,'library2'])->name('product3.store');
+Route::get('/libro/create',[BookController::class,'formulariouser']);
+Route::post('/libro/productostore',[BookController::class,'userStore'])->name('libro.store');
+Route::get('/listar/libro',[BookController::class,'listaruser'])->name('listar.libro');
+Route::get('/libro/{libro}', [BookController::class, 'show'])->name('showlibro');
+Route::delete('/libro/{libro}',[BookController::class,'destroyuser'])->name('destroylibro');
+Route::get('/libro/{libro}/editar', [BookController::class, 'edit'])->name('libro.edit');
+Route::put('/libro/{libro}', [BookController::class, 'update'])->name('libro.update');
 
 
-
-Route::get('/frcuadratica',[CuadraticaController::class,'cuadratica']);
-Route::post('/cuadratica',[CuadraticaController::class,'cuadratica2'])->name('product4.store');
-
-
-Route::get('/frcousins',[CousinsController::class,'Cousins']);
-Route::post('/cousins',[CousinsController::class,'Cousins2'])->name('product5.store');
-
-
-Route::get('/frinverted',[InvertedPhraseController::class,'inverted']);
-Route::post('/inverted',[InvertedPhraseController::class,'inverted2'])->name('frinverted.os');
-
-Route::get('/framigos',[FriendsController::class,'amigos']);
-Route::post('/verificarAmigos',[FriendsController::class,'verificarAmigos'])->name('amigos.co');
-
-Route::get('/index',[CursoController::class,'index']);
-Route::get('/frcurso',[CursoController::class,'curso']);    
-Route::post('/curso',[CursoController::class,'funcioncurso'])->name('cursos.store');
-
-
-Route::controller(ProductsController::class)->group(function(){
-
-    Route::get('/cosas','cosas');
-    Route::get('/cosas2','cosas');
-    Route::get('/Primos/{dato1}','Primos');
-    Route::get('/Amigos/{numero1}/{numero2}', 'Amigos');
-    
-    });
-
-
-
-
-
+Route::get('/usuarios', [ExemplaryUserController::class, 'index'])->name('usuarios.index');
+Route::post('/usuarios/asociar-rol', [ExemplaryUserController::class, 'asociarRol'])->name('usuarios.asociar-rol');
