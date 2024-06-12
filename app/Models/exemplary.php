@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+    namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -16,4 +16,4 @@ class exemplary extends Model
           return $this->belongsToMany('App\Models\exemplary_user');
       }
 
-}
+    }

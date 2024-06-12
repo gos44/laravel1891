@@ -1,12 +1,10 @@
 <?php
 
-use App\Http\Controllers\ProductsController;
+
 use App\Http\Controllers\BookController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\ExemplaryController;
 use App\Http\Controllers\ExemplaryUserController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CursoController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -29,4 +27,4 @@ Route::put('/libro/{libro}', [BookController::class, 'update'])->name('libro.upd
 
 
 Route::get('/usuarios', [ExemplaryUserController::class, 'index'])->name('usuarios.index');
-Route::post('/usuarios/asociar-rol', [ExemplaryUserController::class, 'asociarRol'])->name('usuarios.asociar-rol');
+Route::post('/usuarios/asociar-rol', [ExemplaryUserController::class, 'asociar'])->name('usuarios.asociar-rol');

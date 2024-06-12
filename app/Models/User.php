@@ -44,7 +44,7 @@ class User extends Authenticatable
     ];
 
    public function ExemplaryUser(){
-    return $this->belongsToMany('App\Models\exemplary_user');
+    return $this->hasMany('App\Models\exemplary_user');
 }
 
 }
