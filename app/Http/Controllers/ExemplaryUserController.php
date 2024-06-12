@@ -17,11 +17,12 @@ class ExemplaryUserController extends Controller
     public function asociarRol(Request $request)
     {
         $usuario = User::find($request->user_id);
-        $usuario->exemplaries()->attach($request->exemplary_id);
-        return 'se hiso la asociación';
+        $usuario->ExemplaryUser()->attach($request->exemplary_id);
+        return $usuario;
     }
 }
 //
 //\App\Models\User::all();
 //$user = \App\Models\user::find(1);
 //user->examplary()->detach(1);  
+

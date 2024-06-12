@@ -13,7 +13,7 @@ class exemplary extends Model
     }
     //Relacion muchos a muchos
         public function ExemplaryUser(){
-          return $this->belongsToMany('App\Models\ExemplaryUser');
+          return $this->belongsToMany('App\Models\exemplary_user');
       }
 
 }

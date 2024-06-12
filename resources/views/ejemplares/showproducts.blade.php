@@ -14,21 +14,21 @@
         <label>
             Usuario:
             <select name="user_id">
-                @foreach($users as $user)
-                    <option value="{{ $user->id }}">{{ $user->id }}-{{ $user->name }}</option>
+                @foreach($usuarios as $usuario)
+                    <option value="{{ $usuario->id }}">{{ $usuario->id }}-{{ $usuario->name }}</option>
                 @endforeach
             </select>
         </label>
-        <br>
+        <br><br><br>
         <label>
             Ejemplar:
-            <select name="role_id">
+            <select name="exemplares_id">
                 @foreach($exemplares as $exemplare)
-                    <option value="{{ $exemplare->id }}">{{ $exemplare->localizacion }}</option>
+                    <option value="{{ $exemplare->id }}">{{ $exemplare->id }}-{{ $exemplare->localizacion }}</option>
                 @endforeach
             </select>
         </label>
-        <br>
+        <br><br>
         <button type="submit">Enviar Formulario</button>
     </form>
 </body>
